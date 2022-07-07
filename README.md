@@ -2,7 +2,7 @@
 This repository publishes the models for risk predictions of 30-day mortality after stroke using machine learning and statistical methods. The models were developed and validated with SSNAP (Stroke registry in UK) and externally validated with RiksStroke (Stroke registry in Sweden).
 
 
-# From manuscript: Developing and externally validating a generalisable risk prediction model for 30-day mortality after stroke: a UK and Sweden based multicountry registry study
+## From manuscript: Developing and externally validating a generalisable risk prediction model for 30-day mortality after stroke: a UK and Sweden based multicountry registry study
 
 ## Overview
 

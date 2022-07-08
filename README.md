@@ -13,26 +13,12 @@ This repository publishes the models for risk predictions of 30-day mortality af
 
 ## About the models
 
-The file xxx validates five models that were initially trained on SSNAP registry data in 2013-2018. The models are: Logistic Regression (LR), LR with elastic net and interaction terms, and XGBoost.
-
-The script imports a validation dateset (validation.csv) and generates the following:
-
-1. Evaluate the Brier Score of the pre-trained models on the validation dataset;
-2. Evaluate discrimination (area under the ROC curve (AUC)) of the pre-trained models on the validation dataset;
-3. Evaluate calibration (calibration-in-the-large, calibration slop and calibration plots) on the validation dataset;
-4. Analysis of the decision curves showing net benefit at every probability threshold.
-
-
-Note:
-* The code does not perform any training or cross-validation;
-* The code does not do imputation. 
-* Imputation could be done with median/mean values of each variable 
-
+The file External_validation_with_trained_models.ipynb shows how to load the trained models and use it for predictions. The models are: Logistic Regression (LR), LR with elastic net and interaction terms, and XGBoost.
 
 ## How to use this repository
 
 1. Prepare your validation dataset according to the below specification;
-2. Run xxx using your own validation dataset;
+2. Run External_validation_with_trained_models.ipynb using your own validation dataset;
 3. We would appreciate if you emial the results to wenjuan.wang@kcl.ac.uk.
 
 ### Measures needed to validate these models
@@ -106,8 +92,4 @@ The 13 required variables, including the name, coding of the variables are liste
 
 For LR with elastic net, we used the “train” function from caret R package, with 5-fold CV and 10 grids for each tuning parameters. For XGBoost, we tuned with 5-fold CV and 100 random combinations of all hyperparameters in certain intervals, i.e. maximum depth of each tree to be 3 to 10, minimum child weight to be 1 to 10, gamma (regularisation parameter) to be 0 to 1, the proportion of observations supplied to a tree to be 0.5 to 1, the proportion of features supplied to a tree to be 0.5 to 1.
 
-
-### Methods for calculating the performance
-
-AUC was obtained using xxx. Brier score, calibration plot, calibration-in-the-large and calibration slope were obtained with xxx. 95% CIs were obtained from 500 bootstrap samples. 
 
